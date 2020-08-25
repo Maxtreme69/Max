@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Website</title> 
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js">
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo:500|Open+Sans:300,700" rel="stylesheet">
+  
+    <div class="wrapper">
+      <div class="box1">
+
+      <div class="bottom-right">
+        <div class="container2">
+          <div id="letter-a"></div>
+          <div id="letter-b"></div>
+          <div id="letter-c"></div>
+        </div>
+      </div>
+
+        <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="contact_us.html">Contact us</a></li>
+              <li><a class="current" href="register.html">Register</a></li>
+          </ul>
+      </nav>
+          
+      </div>
+ 
+      <div class="box2">
+        <div class="banner">
+             
+        </div>
+      </div>        
+
+  </head>
+
+    <div class="box3-contact">
+        <div class="wrapper-register">
+            <h2>Contact us</h2>
+            <form id="form-register" onsubmit="return validate();">
+          
+              <div class="input_field">
+                  <input id="name" type="text" placeholder="First Name">
+                  <label id="lbltext1" style="color: red;visibility:
+                  hidden">Invalid</label>
+                  <br>
+              </div>
+              
+          
+              <div class="input_field">
+                  <input type="text" placeholder="second Name" id="name2">
+                  <label id="lbltext2" style="color: red;visibility:
+                  hidden">Invalid</label>
+                  <br>
+              </div>
+          
+              <div class="input_field">
+              <input id="text1" placeholder="Email" type="text"/><br>
+                  <label id="lbltext" style="color: red;visibility:
+                  hidden">Invalid</label>
+                  <br>
+                  </div>
+          
+              <div class="input_field">
+                  <textarea placeholder="Address" id="address" ></textarea>
+              </div>
+          
+              <div class="input_field">
+                 <h3 class="h3-contact-form">Referral</h3>
+                 <span id="cty">
+                  <input id="referral" name="referral" type="checkbox" />Yes
+                  <input id="referral2" name="referral2" type="checkbox" />No
+                  </select>
+                  </span>
+                  <label id="lbltext5" style="color: red;visibility:
+                  hidden">
+                  Invalid</label>
+                  </div>
+          
+                  <div>
+                    <h3 class="h3-contact-form"><legend>Age</legend></h3>
+                        <input type="range" name="weight" id="range_weight" value="5" min="1" max="100" oninput="range_weight_disp.value = range_weight.value">
+                        <output  id="range_weight_disp"></output>
+                        <br>
+                        <label id="lbltext8" style="color: red;visibility:
+                        hidden">
+                        Invalid</label>
+                    </div>
+
+                  <div class="input_field">
+                  <h3 class="h3-contact-form">Membership</h3>
+                  <select id="ddl_member" onchange="show()">
+                    <option value="-1">------------ Please Select ------------</option>
+                    <option value="0">Individual</option>
+                    <option value="1">Family</option>
+                  </select>
+                  <br>
+                  <label id="lbltext6" style="color: red;visibility:
+                  hidden">Invalid</label>
+                  <h4 id="lbltext10" style="color: black;visibility:
+                  hidden"></h4>
+                   <input onchange="showAge()" id="lbltext9" style="color: black;visibility:
+                   hidden" value="0">
+                   <p id="passvalp"> Total: <span id="passval"></span></p>
+                  </div> 
+
+                  <!-- <html><body>
+                    <table>      
+                        <tr> 
+                            <td>Pass </td>
+                                <td> *Value of the variable <span id="passval"></span> goes here* </td>
+                            </tr>   
+                    </table> -->
+                    <!-- <script type="text/javascript">     
+                        var Total='<xsl:value-of select="@total" />'
+                        var Failure='<xsl:value-of select="@errors" />'
+                    
+                        var Pass= Total-Failure;
+                        var passvalholder = document.getElementById("passval");
+                        passvalholder.innerHTML=Pass;
+                    </script> -->
+                    <!-- </body></html> -->
+
+                <script>
+                  document.getElementById("lbltext9").addEventListener("input", showAge);
+                  console.log("You changed the input field")
+
+                  function showAge() {
+                  var member_age = document.getElementById("lbltext9").value;
+
+                  var member_age1 = document.getElementById("member-age1").style.display="none";
+                  var member_age2 = document.getElementById("member-age2").style.display="none";
+                  var member_age3 = document.getElementById("member-age3").style.display="none";
+                  var member_age4 = document.getElementById("member-age4").style.display="none";
+                  var member_age5 = document.getElementById("member-age5").style.display="none";
+
+                  var member_age1p = document.getElementById("member-age1p").style.display="none";
+                  var member_age2p = document.getElementById("member-age2p").style.display="none";
+                  var member_age3p = document.getElementById("member-age3p").style.display="none";
+                  var member_age4p = document.getElementById("member-age4p").style.display="none";
+                  var member_age5p = document.getElementById("member-age5p").style.display="none";
+
+                  // document.getElementById("member-age").addEventListener("input", show2);
+                  for (i=0; member_age > i; i++) {
+                  if (member_age >= 1){
+                  member_age1 = document.getElementById("member-age1").style.display="block";
+                  member_age1p = document.getElementById("member-age1p").style.display="block";
+                  }
+                  if (member_age >= 2)
+                  {
+                  member_age2 = document.getElementById("member-age2").style.display="block";
+                  member_age2p = document.getElementById("member-age2p").style.display="block";
+                  }
+                  if (member_age >= 3)
+                  {
+                  var member_age3 = document.getElementById("member-age3").style.display="block";
+                  var member_age3p = document.getElementById("member-age3p").style.display="block";
+                  }
+                  if (member_age >= 4)
+                  {
+                  var member_age4 = document.getElementById("member-age4").style.display="block";
+                  var member_age4p = document.getElementById("member-age4p").style.display="block";
+                  }
+                  if (member_age >= 5)
+                  {
+                  var member_age5 = document.getElementById("member-age5").style.display="block";
+                  var member_age5p = document.getElementById("member-age5p").style.display="block";
+                  }
+                }
+                  
+                }
+                </script>
+          
+                <div class="input_field">
+                  <h3 class="h3-contact-form">Duration</h3>
+                  <select id="ddl_duration">
+                    <option value="-1">------------ Please Select ------------</option>
+                    <option>Ongoing</option>
+                    <option>3 months</option>
+                    <option>6 months</option>
+                    <option>yearly</option>
+                  </select>
+                  <br>
+                  <label id="lbltext7" style="color: red;visibility:
+                  hidden">
+                  Invalid</label>
+                    <!-- <input id="member-age1" type="range" max="10" style="color: black;visibility: hidden" oninput="num.value = this.value">  -->
+                    <!-- <output  id="member-age1-out" style="color: black;visibility: hidden" id="num" ¿Value="InitialValue"?>1</output>  -->
+                    <p id="member-age1p" style="color: black;display:
+                    none">Please enter age of family member 1</p>
+                    <input id="member-age1" class="member-input" style="color: black;display:
+                       none" value="0">
+                    <p id="member-age2p" style="color: black;display:
+                    none">Please enter age of family member 2</p>
+                    <input id="member-age2" class="member-input" style="color: black;display:
+                    none" value="0">
+                    <p id="member-age3p" style="color: black;display:
+                    none">Please enter age of family member 3</p>
+                    <input id="member-age3" class="member-input" style="color: black;display:
+                    none" value="0">
+                    <p id="member-age4p" style="color: black;display:
+                    none">Please enter age of family member 4</p>
+                    <input id="member-age4" class="member-input" style="color: black;display:
+                    none" value="0">
+                    <p id="member-age5p" style="color: black;display:
+                    none">Please enter age of family member 5</p>
+                    <input id="member-age5" class="member-input" style="color: black;display:
+                    none" value="0">
+                     <!-- <input type="range" min="1" max="100" value="0" class="slider" value="5" min="1" max="100" id="member-age1"  style="color: black;visibility: hidden">
+                      <p style="color: black;visibility: hidden">Value: <span style="color: black;visibility: hidden" id="member-age1"></span></p>  -->
+                      <!-- <input type="range" min="1" max="100" value="0" class="slider" value="5" min="1" max="100" id="member-age2" style="color: black;visibility: hidden"> 
+                      <p style="color: black;visibility: hidden">Value: <span style="color: black;visibility: hidden" id="demo2"></span></p> 
+                      <input type="range" name="weight" id="range_weight" value="5" min="1" max="100" oninput="range_weight_disp.value = range_weight.value">
+                            <output  id="range_weight_disp"></output>  -->
+                      <!-- <input type="range" name="weight" id="member-age1"  style="color: black;visibility: hidden" value="5" min="1" max="100" oninput="range_weight_disp.value = range_weight.value"> -->
+                      <!-- <input type="range" name="weight" id="member-age2"  style="color: black;visibility: hidden" value="5" min="1" max="100" oninput="range_weight_disp.value = range_weight.value">
+                      <input type="range" name="weight" id="member-age3"  style="color: black;visibility: hidden" value="5" min="1" max="100" oninput="range_weight_disp.value = range_weight.value">
+                      <input type="range" name="weight" id="member-age4"  style="color: black;visibility: hidden" value="5" min="1" max="100" oninput="range_weight_disp.value = range_weight.value">
+                      <input type="range" name="weight" id="member-age5"  style="color: black;visibility: hidden" value="5" min="1" max="100" oninput="range_weight_disp.value = range_weight.value"> -->
+                </div> 
+
+                <!-- <input type="range" name="weight" id="range_weight" value="5" min="1" max="100" oninput="range_weight_disp.value = range_weight.value">
+                <output  id="range_weight_disp"></output>
+                <br> -->
+
+      
+
+
+            </form>
+          <div>
+            <button class="button-contact" onclick= "validate(); member()">Submit</button>
+          </div>
+          
+          </body>
+          </html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <link rel="stylesheet" href="contactUsForm.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="brand"><span>Max Muscle</span>Web Design</h1>
+        <div class="wrapper">
+            <div class="company-info">
+                <h3>Max Muscle Web Design</h3>
+                <ul>
+                    <li>44 Something St</li>
+                    <li>(555) 555-5555</li>
+                    <li>test@maxmuscle.com</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h3>Email Us</h3>
+
+                <form class="form" id="form">
+                    <p>
+                        <label>First name</label>
+                        <input id="first-name" type="text" name="name">
+                    </p>
+                    <p>
+                        <label>Second name</label>
+                        <input id="second-name" type="text" name="name">
+                    </p>
+                    <p>
+                        <label>Email</label>
+                        <input id="email" type="email" name="email" placeholder="someemail@yahoo.com">
+                    </p>
+                    <p class="full">
+                        <label>Address</label>
+                        <textArea name="Address" rows="5"></textArea>
+                    </p>
+
+                    <fieldset>
+                        <div class="float-left">
+                          <h3 class="h3-contact-form">Referral</h3>
+                          <input type="radio" class="radio" name="x" value="y" id="y" />
+                          <label class="align" for="y">Yes</label>
+                          <input type="radio" class="radio" name="x" value="z" id="z" />
+                          <label class="align" for="z">No</label>
+                        </div>
+                      </fieldset>
+
+                      <fieldset>
+                        <h3 class="h3-contact-form"><legend>Membership</legend></h3>
+                        <p>
+                           <label>Type</label>
+                           <select id = "myList">
+                             <option value = "1">Individual</option>
+                             <option value = "2">Family</option>
+                           </select>
+                        </p>
+                     </fieldset>
+
+                     <fieldset>
+                        <h3 class="h3-contact-form"><legend>Age</legend></h3>
+                        <input type="range" name="weight" id="range_weight" value="5" min="1" max="100" oninput="range_weight_disp.value = range_weight.value">
+                        <output  id="range_weight_disp"></output>
+                    </fieldset>
+
+                    <fieldset>
+                    <h3 class="h3-contact-form"><legend>Duration of Membership</legend></h3>
+                    <label for="cars">Type</label>
+                        <select id="cars" name="cars">
+                        <option value="volvo">Ongoing</option>
+                        <option value="saab">3 months</option>
+                        <option value="fiat">6 monts</option>
+                        <option value="audi">Yearly</option>
+                    </select>
+                    </fieldset>
+
+                    <fieldset>
+                        <p class="full">
+                            <button type="submit">Submit</button>
+                        </p>  
+                    </fieldset>
+
+                     <!-- <p>Referral <br> Yes<input class="float" type="radio" name="gender" value="male"><br>
+                                     No   <input class="float" type="radio" name="gender" value="female">
+                    </p>
+                    <p class="full"> 
+                     <label>Message</label>
+                        <textArea name="message" rows="5"></textArea>
+                    </p> -->
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
